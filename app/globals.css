@@ -57,6 +57,10 @@ a {
   transition: box-shadow 0.3s ease;
 }
 
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;

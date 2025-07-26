@@ -1,95 +1,106 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { useState } from 'react'
-import Image from 'next/image'
-import { ExternalLink, Github } from 'lucide-react'
+import { motion } from "framer-motion";
+import { useState } from "react";
+import Image from "next/image";
+import { ExternalLink, Github } from "lucide-react";
 
 interface Project {
-  id: number
-  title: string
-  category: string
-  description: string
-  image: string
-  technologies: string[]
-  liveUrl?: string
-  githubUrl?: string
+  id: number;
+  title: string;
+  category: string;
+  description: string;
+  image: string;
+  technologies: string[];
+  liveUrl?: string;
+  githubUrl?: string;
 }
 
 const WorksSection = () => {
-  const [selectedCategory, setSelectedCategory] = useState('all')
+  const [selectedCategory, setSelectedCategory] = useState("all");
 
   const projects: Project[] = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      category: 'web',
-      description: 'Platform e-commerce modern dengan fitur lengkap menggunakan Next.js dan Stripe',
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop',
-      technologies: ['Next.js', 'TypeScript', 'Stripe', 'Tailwind CSS'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com/hendradarmawan/ecommerce'
+      title: "E-Commerce Platform",
+      category: "web",
+      description:
+        "Platform e-commerce modern dengan fitur lengkap menggunakan Next.js dan Stripe",
+      image:
+        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
+      technologies: ["Next.js", "TypeScript", "Stripe", "Tailwind CSS"],
+      liveUrl: "https://example.com",
+      githubUrl: "https://github.com/hendradarmawan/ecommerce",
     },
     {
       id: 2,
-      title: 'Task Management App',
-      category: 'web',
-      description: 'Aplikasi manajemen tugas dengan real-time collaboration',
-      image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop',
-      technologies: ['React', 'Node.js', 'Socket.io', 'MongoDB'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com/hendradarmawan/taskapp'
+      title: "Task Management App",
+      category: "web",
+      description: "Aplikasi manajemen tugas dengan real-time collaboration",
+      image:
+        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
+      technologies: ["React", "Node.js", "Socket.io", "MongoDB"],
+      liveUrl: "https://example.com",
+      githubUrl: "https://github.com/hendradarmawan/taskapp",
     },
     {
       id: 3,
-      title: 'Weather Dashboard',
-      category: 'web',
-      description: 'Dashboard cuaca interaktif dengan visualisasi data yang menarik',
-      image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop',
-      technologies: ['Vue.js', 'Chart.js', 'Weather API', 'CSS3'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com/hendradarmawan/weather'
+      title: "Weather Dashboard",
+      category: "web",
+      description:
+        "Dashboard cuaca interaktif dengan visualisasi data yang menarik",
+      image:
+        "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop",
+      technologies: ["Vue.js", "Chart.js", "Weather API", "CSS3"],
+      liveUrl: "https://example.com",
+      githubUrl: "https://github.com/hendradarmawan/weather",
     },
     {
       id: 4,
-      title: 'Portfolio Website',
-      category: 'design',
-      description: 'Website portfolio dengan desain minimalis dan animasi yang halus',
-      image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop',
-      technologies: ['Next.js', 'Framer Motion', 'Tailwind CSS'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com/hendradarmawan/portfolio'
+      title: "Portfolio Website",
+      category: "design",
+      description:
+        "Website portfolio dengan desain minimalis dan animasi yang halus",
+      image:
+        "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop",
+      technologies: ["Next.js", "Framer Motion", "Tailwind CSS"],
+      liveUrl: "https://example.com",
+      githubUrl: "https://github.com/hendradarmawan/portfolio",
     },
     {
       id: 5,
-      title: 'Learning Management System',
-      category: 'web',
-      description: 'Platform pembelajaran online untuk institusi pendidikan',
-      image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop',
-      technologies: ['React', 'Express.js', 'PostgreSQL', 'JWT'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com/hendradarmawan/lms'
+      title: "Learning Management System",
+      category: "web",
+      description: "Platform pembelajaran online untuk institusi pendidikan",
+      image:
+        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop",
+      technologies: ["React", "Express.js", "PostgreSQL", "JWT"],
+      liveUrl: "https://example.com",
+      githubUrl: "https://github.com/hendradarmawan/lms",
     },
     {
       id: 6,
-      title: 'Mobile App UI Design',
-      category: 'design',
-      description: 'Desain UI untuk aplikasi mobile dengan fokus pada user experience',
-      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop',
-      technologies: ['Figma', 'Adobe XD', 'Prototyping'],
-      liveUrl: 'https://example.com'
-    }
-  ]
+      title: "Mobile App UI Design",
+      category: "design",
+      description:
+        "Desain UI untuk aplikasi mobile dengan fokus pada user experience",
+      image:
+        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop",
+      technologies: ["Figma", "Adobe XD", "Prototyping"],
+      liveUrl: "https://example.com",
+    },
+  ];
 
   const categories = [
-    { id: 'all', label: 'すべて', labelId: 'Semua' },
-    { id: 'web', label: 'ウェブ', labelId: 'Web' },
-    { id: 'design', label: 'デザイン', labelId: 'Design' }
-  ]
+    { id: "all", label: "すべて", labelId: "Semua" },
+    { id: "web", label: "ウェブ", labelId: "Web" },
+    { id: "design", label: "デザイン", labelId: "Design" },
+  ];
 
-  const filteredProjects = selectedCategory === 'all' 
-    ? projects 
-    : projects.filter(project => project.category === selectedCategory)
+  const filteredProjects =
+    selectedCategory === "all"
+      ? projects
+      : projects.filter((project) => project.category === selectedCategory);
 
   return (
     <section id="works" className="min-h-screen py-20">
@@ -108,7 +119,7 @@ const WorksSection = () => {
           <h2 className="text-4xl lg:text-6xl font-serif font-bold text-gradient mb-8">
             SELECTED WORKS
           </h2>
-          
+
           {/* Category Filter */}
           <div className="flex justify-center space-x-8 mb-12">
             {categories.map((category) => (
@@ -116,9 +127,9 @@ const WorksSection = () => {
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
                 className={`transition-colors duration-300 ${
-                  selectedCategory === category.id 
-                    ? 'text-cream-100' 
-                    : 'text-gray-400 hover:text-cream-100'
+                  selectedCategory === category.id
+                    ? "text-cream-100"
+                    : "text-gray-400 hover:text-cream-100"
                 }`}
               >
                 <div className="text-xs mb-1">{category.label}</div>
@@ -149,7 +160,7 @@ const WorksSection = () => {
                     height={400}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  
+
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
                     {project.liveUrl && (
@@ -186,7 +197,7 @@ const WorksSection = () => {
                   <p className="text-gray-300 text-sm mb-4 leading-relaxed">
                     {project.description}
                   </p>
-                  
+
                   {/* Technologies */}
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (
@@ -218,7 +229,7 @@ const WorksSection = () => {
         </motion.div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default WorksSection
+export default WorksSection;

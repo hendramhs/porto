@@ -1,12 +1,12 @@
 # Hendra Darmawan - Portfolio Website
-## Teknologi 
 
-- **Next.js 14** 
-- **TypeScript** 
-- **Tailwind CSS** 
-- **Framer Motion** 
-- **Lucide React** 
+## Teknologi
 
+- **Next.js 14**
+- **TypeScript**
+- **Tailwind CSS**
+- **Framer Motion**
+- **Lucide React**
 
 ## 📧 Contact
 
