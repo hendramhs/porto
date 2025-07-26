@@ -7,6 +7,7 @@ import AboutSection from "../components/AboutSection";
 import ProjectShowcase from "../components/TimelineSection";
 import ContactSection from "../components/ContactSection";
 import Footer from "../components/Footer";
+import SectionTransition from "../components/SectionTransition";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("home");
@@ -59,11 +60,24 @@ export default function Home() {
         <HeroSection />
       </div>
 
+      {/* Transition: Hero to About */}
+      <SectionTransition variant="hero-to-about" />
+
       <AboutSection />
+
+      {/* Transition: About to Projects */}
+      <SectionTransition variant="about-to-projects" />
+
       <section id="projects">
         <ProjectShowcase />
       </section>
+
+      {/* Transition: Projects to Contact */}
+      <SectionTransition variant="projects-to-contact" />
+
       <ContactSection />
+
+
       <Footer />
     </main>
   );

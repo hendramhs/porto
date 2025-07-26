@@ -32,8 +32,8 @@ const ProjectShowcase = () => {
       });
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   // Scroll tracking for parallax
@@ -42,8 +42,8 @@ const ProjectShowcase = () => {
       setScrollY(window.scrollY);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const projectData: ProjectItem[] = [
@@ -144,7 +144,9 @@ const ProjectShowcase = () => {
   // Mouse parallax calculation
   const getMouseParallax = (intensity: number) => {
     return {
-      transform: `translate(${mousePosition.x * intensity}px, ${mousePosition.y * intensity}px)`,
+      transform: `translate(${mousePosition.x * intensity}px, ${
+        mousePosition.y * intensity
+      }px)`,
     };
   };
 
@@ -175,7 +177,7 @@ const ProjectShowcase = () => {
         {/* Projects Timeline */}
         <div className="relative max-w-6xl mx-auto">
           {/* Timeline Line - Desktop with Parallax */}
-          <div 
+          <div
             className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full timeline-line"
             style={{
               transform: `translateX(-50%) ${getParallaxTransform(-0.05)}`,
@@ -183,7 +185,7 @@ const ProjectShowcase = () => {
           />
 
           {/* Timeline Line - Mobile with Parallax */}
-          <div 
+          <div
             className="md:hidden absolute left-8 w-0.5 h-full timeline-line"
             style={{
               transform: getParallaxTransform(-0.05),
@@ -213,7 +215,10 @@ const ProjectShowcase = () => {
                       : "md:pl-8 md:text-left text-left pl-16 md:pl-0"
                   }`}
                   style={{
-                    transform: `${getParallaxTransform(-0.02 * (index + 1))} ${getMouseParallax(3 * (index % 2 === 0 ? 1 : -1)).transform || ''}`,
+                    transform: `${getParallaxTransform(-0.02 * (index + 1))} ${
+                      getMouseParallax(3 * (index % 2 === 0 ? 1 : -1))
+                        .transform || ""
+                    }`,
                   }}
                 >
                   {/* Year Badge */}
@@ -268,10 +273,12 @@ const ProjectShowcase = () => {
                 </div>
 
                 {/* Center Icon */}
-                <div 
+                <div
                   className="relative z-10 md:static absolute left-0"
                   style={{
-                    transform: `${getParallaxTransform(-0.08)} ${getMouseParallax(8).transform || ''}`,
+                    transform: `${getParallaxTransform(-0.08)} ${
+                      getMouseParallax(8).transform || ""
+                    }`,
                   }}
                 >
                   <motion.div
@@ -279,10 +286,10 @@ const ProjectShowcase = () => {
                     whileInView={{ scale: 1, rotate: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 + 0.2 }}
                     viewport={{ once: true }}
-                    whileHover={{ 
-                      scale: 1.2, 
+                    whileHover={{
+                      scale: 1.2,
                       rotate: 360,
-                      boxShadow: "0 0 30px rgba(245, 245, 220, 0.3)"
+                      boxShadow: "0 0 30px rgba(245, 245, 220, 0.3)",
                     }}
                     className="w-12 h-12 md:w-16 md:h-16 bg-dark-100 border-4 border-cream-100 rounded-full flex items-center justify-center timeline-dot timeline-dot-animated cursor-pointer"
                   >
@@ -291,7 +298,7 @@ const ProjectShowcase = () => {
                       className="md:w-6 md:h-6 text-cream-100"
                     />
                   </motion.div>
-                  
+
                   {/* Floating particles around icon */}
                   {[...Array(3)].map((_, i) => (
                     <motion.div
@@ -300,7 +307,9 @@ const ProjectShowcase = () => {
                       style={{
                         top: `${20 + i * 15}%`,
                         left: `${80 + i * 10}%`,
-                        transform: `${getParallaxTransform(-0.1 - (i * 0.02))} ${getMouseParallax(15 + (i * 5)).transform || ''}`,
+                        transform: `${getParallaxTransform(-0.1 - i * 0.02)} ${
+                          getMouseParallax(15 + i * 5).transform || ""
+                        }`,
                       }}
                       animate={{
                         y: [0, -10, 0],
@@ -323,7 +332,10 @@ const ProjectShowcase = () => {
                       : "md:pr-8 pl-16 md:pr-8"
                   }`}
                   style={{
-                    transform: `${getParallaxTransform(-0.03 * (index + 1))} ${getMouseParallax(5 * (index % 2 === 0 ? -1 : 1)).transform || ''}`,
+                    transform: `${getParallaxTransform(-0.03 * (index + 1))} ${
+                      getMouseParallax(5 * (index % 2 === 0 ? -1 : 1))
+                        .transform || ""
+                    }`,
                   }}
                 >
                   {project.image && (
@@ -332,7 +344,7 @@ const ProjectShowcase = () => {
                       whileInView={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.8, delay: index * 0.1 + 0.4 }}
                       viewport={{ once: true }}
-                      whileHover={{ 
+                      whileHover={{
                         scale: 1.05,
                         rotateY: index % 2 === 0 ? 5 : -5,
                         rotateX: 2,
@@ -364,16 +376,20 @@ const ProjectShowcase = () => {
                       </div>
 
                       {/* Parallax overlay elements */}
-                      <div 
+                      <div
                         className="absolute top-2 right-2 w-4 h-4 border border-cream-100/30 rounded-full"
                         style={{
-                          transform: `${getParallaxTransform(-0.15)} ${getMouseParallax(20).transform || ''}`,
+                          transform: `${getParallaxTransform(-0.15)} ${
+                            getMouseParallax(20).transform || ""
+                          }`,
                         }}
                       />
-                      <div 
+                      <div
                         className="absolute bottom-2 left-2 w-2 h-2 bg-cream-100/40 rounded-full"
                         style={{
-                          transform: `${getParallaxTransform(-0.2)} ${getMouseParallax(-15).transform || ''}`,
+                          transform: `${getParallaxTransform(-0.2)} ${
+                            getMouseParallax(-15).transform || ""
+                          }`,
                         }}
                       />
                     </motion.div>
@@ -414,38 +430,46 @@ const ProjectShowcase = () => {
       {/* Parallax Background Layers */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Layer 1: Slow moving geometric shapes */}
-        <div 
+        <div
           className="absolute top-10 left-10 w-64 h-64 opacity-5"
           style={{
-            transform: `${getParallaxTransform(-0.1)} ${getMouseParallax(5).transform || ''}`,
+            transform: `${getParallaxTransform(-0.1)} ${
+              getMouseParallax(5).transform || ""
+            }`,
           }}
         >
           <div className="w-full h-full border border-cream-100/20 rounded-full animate-pulse" />
         </div>
-        
-        <div 
+
+        <div
           className="absolute top-1/3 right-20 w-48 h-48 opacity-10"
           style={{
-            transform: `${getParallaxTransform(-0.15)} ${getMouseParallax(-8).transform || ''}`,
+            transform: `${getParallaxTransform(-0.15)} ${
+              getMouseParallax(-8).transform || ""
+            }`,
           }}
         >
           <div className="w-full h-full bg-gradient-to-br from-cream-100/10 to-transparent rounded-lg rotate-45" />
         </div>
 
         {/* Layer 2: Medium speed floating elements */}
-        <div 
+        <div
           className="absolute top-1/2 left-1/4 w-32 h-32 opacity-15"
           style={{
-            transform: `${getParallaxTransform(-0.2)} ${getMouseParallax(12).transform || ''}`,
+            transform: `${getParallaxTransform(-0.2)} ${
+              getMouseParallax(12).transform || ""
+            }`,
           }}
         >
           <div className="w-full h-full border-2 border-cream-100/30 rounded-full" />
         </div>
 
-        <div 
+        <div
           className="absolute bottom-1/3 right-1/3 w-40 h-40 opacity-8"
           style={{
-            transform: `${getParallaxTransform(-0.25)} ${getMouseParallax(-15).transform || ''}`,
+            transform: `${getParallaxTransform(-0.25)} ${
+              getMouseParallax(-15).transform || ""
+            }`,
           }}
         >
           <div className="w-full h-full bg-cream-100/5 rounded-full blur-xl" />
@@ -457,18 +481,22 @@ const ProjectShowcase = () => {
             key={i}
             className="absolute w-2 h-2 bg-cream-100/20 rounded-full"
             style={{
-              top: `${20 + (i * 10)}%`,
-              left: `${10 + (i * 8)}%`,
-              transform: `${getParallaxTransform(-0.3 - (i * 0.05))} ${getMouseParallax(20 + (i * 5)).transform || ''}`,
+              top: `${20 + i * 10}%`,
+              left: `${10 + i * 8}%`,
+              transform: `${getParallaxTransform(-0.3 - i * 0.05)} ${
+                getMouseParallax(20 + i * 5).transform || ""
+              }`,
             }}
           />
         ))}
 
         {/* Layer 4: Code-like floating elements */}
-        <div 
+        <div
           className="absolute top-20 right-10 opacity-10"
           style={{
-            transform: `${getParallaxTransform(-0.4)} ${getMouseParallax(25).transform || ''}`,
+            transform: `${getParallaxTransform(-0.4)} ${
+              getMouseParallax(25).transform || ""
+            }`,
           }}
         >
           <div className="text-cream-100/30 font-mono text-xs">
@@ -478,33 +506,39 @@ const ProjectShowcase = () => {
           </div>
         </div>
 
-        <div 
+        <div
           className="absolute bottom-20 left-20 opacity-10"
           style={{
-            transform: `${getParallaxTransform(-0.35)} ${getMouseParallax(-20).transform || ''}`,
+            transform: `${getParallaxTransform(-0.35)} ${
+              getMouseParallax(-20).transform || ""
+            }`,
           }}
         >
           <div className="text-cream-100/30 font-mono text-xs">
             <div>const projects = [</div>
-            <div className="ml-4">{ "{ name: 'Portfolio' }" },</div>
+            <div className="ml-4">{"{ name: 'Portfolio' }"},</div>
             <div>];</div>
           </div>
         </div>
 
         {/* Layer 5: Animated gradient orbs */}
-        <div 
+        <div
           className="absolute top-1/4 left-1/2 w-96 h-96 opacity-5"
           style={{
-            transform: `${getParallaxTransform(-0.1)} ${getMouseParallax(8).transform || ''}`,
+            transform: `${getParallaxTransform(-0.1)} ${
+              getMouseParallax(8).transform || ""
+            }`,
           }}
         >
           <div className="w-full h-full bg-gradient-radial from-cream-100/20 via-cream-100/10 to-transparent rounded-full animate-pulse" />
         </div>
 
-        <div 
+        <div
           className="absolute bottom-1/4 right-1/4 w-72 h-72 opacity-8"
           style={{
-            transform: `${getParallaxTransform(-0.18)} ${getMouseParallax(-12).transform || ''}`,
+            transform: `${getParallaxTransform(-0.18)} ${
+              getMouseParallax(-12).transform || ""
+            }`,
           }}
         >
           <div className="w-full h-full bg-gradient-radial from-blue-500/10 via-purple-500/5 to-transparent rounded-full animate-pulse" />
