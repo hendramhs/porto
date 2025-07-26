@@ -1,7 +1,7 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import Image from 'next/image'
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 const AboutSection = () => {
   return (
@@ -79,29 +79,32 @@ const AboutSection = () => {
 
             <div className="space-y-6 text-gray-300 leading-relaxed">
               <p>
-                Saya Hendra Darmawan, seorang mahasiswa yang memiliki passion mendalam 
-                dalam dunia pengembangan web dan teknologi. Perjalanan saya dimulai dari 
-                keingintahuan sederhana tentang bagaimana website bekerja.
-              </p>
-              
-              <p>
-                Sebagai mahasiswa, saya terus belajar dan mengasah kemampuan dalam 
-                berbagai teknologi web modern. Saya percaya bahwa kombinasi antara 
-                pemikiran logis dan kreativitas adalah kunci untuk menciptakan 
-                solusi digital yang tidak hanya fungsional, tetapi juga memberikan 
-                pengalaman yang bermakna bagi pengguna.
+                Saya Hendra Darmawan, seorang mahasiswa yang memiliki passion
+                mendalam dalam dunia pengembangan web dan teknologi. Perjalanan
+                saya dimulai dari keingintahuan sederhana tentang bagaimana
+                website bekerja.
               </p>
 
               <p>
-                Dalam setiap proyek yang saya kerjakan, saya selalu berusaha untuk 
-                menyeimbangkan aspek teknis dengan estetika, menciptakan harmoni 
-                antara kode yang bersih dan desain yang menarik.
+                Sebagai mahasiswa, saya terus belajar dan mengasah kemampuan
+                dalam berbagai teknologi web modern. Saya percaya bahwa
+                kombinasi antara pemikiran logis dan kreativitas adalah kunci
+                untuk menciptakan solusi digital yang tidak hanya fungsional,
+                tetapi juga memberikan pengalaman yang bermakna bagi pengguna.
+              </p>
+
+              <p>
+                Dalam setiap proyek yang saya kerjakan, saya selalu berusaha
+                untuk menyeimbangkan aspek teknis dengan estetika, menciptakan
+                harmoni antara kode yang bersih dan desain yang menarik.
               </p>
             </div>
 
             <div className="grid grid-cols-2 gap-6 pt-8">
               <div>
-                <h3 className="text-lg font-semibold text-cream-100 mb-3">Keahlian</h3>
+                <h3 className="text-lg font-semibold text-cream-100 mb-3">
+                  Keahlian
+                </h3>
                 <ul className="space-y-2 text-sm text-gray-400">
                   <li>React & Next.js</li>
                   <li>TypeScript</li>
@@ -111,7 +114,9 @@ const AboutSection = () => {
                 </ul>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-cream-100 mb-3">Minat</h3>
+                <h3 className="text-lg font-semibold text-cream-100 mb-3">
+                  Minat
+                </h3>
                 <ul className="space-y-2 text-sm text-gray-400">
                   <li>Web Development</li>
                   <li>Frontend Design</li>
@@ -125,7 +130,7 @@ const AboutSection = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default AboutSection
+export default AboutSection;

@@ -1,30 +1,38 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Github, Linkedin, Mail } from 'lucide-react'
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, Github, Linkedin, Mail } from "lucide-react";
 
 interface NavigationProps {
-  activeSection: string
-  setActiveSection: (section: string) => void
+  activeSection: string;
+  setActiveSection: (section: string) => void;
 }
 
 const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
-    { id: 'hero', label: 'ホーム', labelId: 'Beranda' },
-    { id: 'about', label: '私について', labelId: 'Tentang' },
-    { id: 'projects', label: 'プロジェクト', labelId: 'Projects' },
-    { id: 'works', label: '制作実績', labelId: 'Karya' },
-    { id: 'contact', label: 'お問い合わせ', labelId: 'Kontak' },
-  ]
+    { id: "hero", label: "ホーム", labelId: "Beranda" },
+    { id: "about", label: "私について", labelId: "Tentang" },
+    { id: "projects", label: "プロジェクト", labelId: "Projects" },
+    { id: "works", label: "制作実績", labelId: "Karya" },
+    { id: "contact", label: "お問い合わせ", labelId: "Kontak" },
+  ];
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/hendradarmawan', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com/in/hendradarmawan', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:hendra@example.com', label: 'Email' },
-  ]
+    {
+      icon: Github,
+      href: "https://github.com/hendradarmawan",
+      label: "GitHub",
+    },
+    {
+      icon: Linkedin,
+      href: "https://linkedin.com/in/hendradarmawan",
+      label: "LinkedIn",
+    },
+    { icon: Mail, href: "mailto:hendra@example.com", label: "Email" },
+  ];
 
   return (
     <>
@@ -49,7 +57,7 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
                 transition={{ delay: index * 0.1 }}
                 onClick={() => setActiveSection(item.id)}
                 className={`text-sm transition-colors duration-300 hover:text-cream-100 ${
-                  activeSection === item.id ? 'text-cream-100' : 'text-gray-400'
+                  activeSection === item.id ? "text-cream-100" : "text-gray-400"
                 }`}
               >
                 <div className="text-xs mb-1">{item.label}</div>
@@ -81,10 +89,10 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
           >
             <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
             <motion.div
-              initial={{ x: '100%' }}
+              initial={{ x: "100%" }}
               animate={{ x: 0 }}
-              exit={{ x: '100%' }}
-              transition={{ type: 'tween', duration: 0.3 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "tween", duration: 0.3 }}
               className="absolute right-0 top-0 h-full w-80 bg-dark-100 border-l border-gray-800"
             >
               <div className="p-6 pt-20">
@@ -93,11 +101,13 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
                     <button
                       key={item.id}
                       onClick={() => {
-                        setActiveSection(item.id)
-                        setIsMenuOpen(false)
+                        setActiveSection(item.id);
+                        setIsMenuOpen(false);
                       }}
                       className={`block w-full text-left transition-colors duration-300 ${
-                        activeSection === item.id ? 'text-cream-100' : 'text-gray-400'
+                        activeSection === item.id
+                          ? "text-cream-100"
+                          : "text-gray-400"
                       }`}
                     >
                       <div className="text-sm mb-1">{item.label}</div>
@@ -127,7 +137,7 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
         )}
       </AnimatePresence>
     </>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;

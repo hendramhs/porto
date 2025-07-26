@@ -22,17 +22,20 @@ Portfolio website modern yang terinspirasi dari desain minimalis Jepang dengan t
 ## 🛠️ Instalasi dan Development
 
 1. **Clone repository**
+
    ```bash
    git clone <repository-url>
    cd porto
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Jalankan development server**
+
    ```bash
    npm run dev
    ```
@@ -56,6 +59,7 @@ npm start
 3. Deploy otomatis akan berjalan
 
 Atau gunakan Vercel CLI:
+
 ```bash
 npm install -g vercel
 vercel
@@ -86,12 +90,14 @@ porto/
 ## 🎨 Customization
 
 ### Mengubah Konten Personal
+
 1. Edit informasi di `components/HeroSection.tsx`
 2. Update foto dan deskripsi di `components/AboutSection.tsx`
 3. Tambah/edit project di `components/WorksSection.tsx`
 4. Update contact info di `components/ContactSection.tsx`
 
 ### Mengubah Styling
+
 - Colors: `tailwind.config.js`
 - Fonts: `app/globals.css`
 - Animations: `tailwind.config.js` dan Framer Motion props

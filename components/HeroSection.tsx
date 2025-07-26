@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
@@ -63,7 +63,7 @@ const HeroSection = () => {
                 <div className="absolute top-1/6 right-1/2 w-10 h-10 bg-gray-300 rounded-full opacity-10" />
               </div>
             </div>
-            
+
             {/* Glow effect */}
             <div className="absolute inset-0 w-80 h-80 lg:w-96 lg:h-96 rounded-full bg-cream-100 opacity-10 blur-xl animate-pulse" />
           </motion.div>
@@ -78,15 +78,16 @@ const HeroSection = () => {
         className="absolute bottom-12 right-12 text-right text-sm text-gray-400 max-w-md hidden lg:block"
       >
         <p className="leading-relaxed">
-          Saya Hendra Darmawan, seorang mahasiswa yang passionate dalam pengembangan web. 
-          Saya menggabungkan pemikiran logis dan intuitif, fungsi dan emosi, 
-          untuk menciptakan pengalaman digital yang memenuhi kebutuhan pengguna.
+          Saya Hendra Darmawan, seorang mahasiswa yang passionate dalam
+          pengembangan web. Saya menggabungkan pemikiran logis dan intuitif,
+          fungsi dan emosi, untuk menciptakan pengalaman digital yang memenuhi
+          kebutuhan pengguna.
         </p>
       </motion.div>
 
       {/* Scroll Indicator */}
     </section>
-  )
-}
+  );
+};
 
-export default HeroSection
+export default HeroSection;

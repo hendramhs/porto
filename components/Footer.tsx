@@ -1,12 +1,12 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { ArrowUp } from 'lucide-react'
+import { motion } from "framer-motion";
+import { ArrowUp } from "lucide-react";
 
 const Footer = () => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <footer className="py-12 border-t border-gray-800">
@@ -24,10 +24,20 @@ const Footer = () => {
               GET IN CONTACT
             </div>
             <div className="flex space-x-8 text-sm text-gray-400">
-              <a href="https://github.com/hendradarmawan" target="_blank" rel="noopener noreferrer" className="hover:text-cream-100 transition-colors duration-300">
+              <a
+                href="https://github.com/hendradarmawan"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-cream-100 transition-colors duration-300"
+              >
                 GitHub
               </a>
-              <a href="https://linkedin.com/in/hendradarmawan" target="_blank" rel="noopener noreferrer" className="hover:text-cream-100 transition-colors duration-300">
+              <a
+                href="https://linkedin.com/in/hendradarmawan"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-cream-100 transition-colors duration-300"
+              >
                 LinkedIn
               </a>
             </div>
@@ -53,7 +63,10 @@ const Footer = () => {
               onClick={scrollToTop}
               className="p-3 bg-dark-200 rounded-full hover:bg-dark-300 transition-colors duration-300 group"
             >
-              <ArrowUp size={20} className="text-cream-100 group-hover:transform group-hover:-translate-y-1 transition-transform duration-300" />
+              <ArrowUp
+                size={20}
+                className="text-cream-100 group-hover:transform group-hover:-translate-y-1 transition-transform duration-300"
+              />
             </button>
           </motion.div>
         </div>
@@ -75,7 +88,7 @@ const Footer = () => {
         </motion.div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

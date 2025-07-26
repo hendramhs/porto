@@ -1,90 +1,111 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { Calendar, Code, ExternalLink, ArrowRight } from 'lucide-react'
-import Image from 'next/image'
-import { useState } from 'react'
+import { motion } from "framer-motion";
+import { Calendar, Code, ExternalLink, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
 
 interface ProjectItem {
-  year: string
-  title: string
-  category: string
-  description: string
-  image?: string
-  icon: any
-  technologies?: string[]
-  link?: string
+  year: string;
+  title: string;
+  category: string;
+  description: string;
+  image?: string;
+  icon: any;
+  technologies?: string[];
+  link?: string;
 }
 
 const ProjectShowcase = () => {
-  const [showMore, setShowMore] = useState(false)
-  
+  const [showMore, setShowMore] = useState(false);
+
   const projectData: ProjectItem[] = [
     {
-      year: '2024',
-      title: 'Portfolio Website',
-      category: 'Web Development',
-      description: 'Website portfolio modern dengan desain minimalis Jepang dan animasi yang halus',
-      image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=300&fit=crop',
+      year: "2024",
+      title: "Portfolio Website",
+      category: "Web Development",
+      description:
+        "Website portfolio modern dengan desain minimalis Jepang dan animasi yang halus",
+      image:
+        "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=300&fit=crop",
       icon: Code,
-      technologies: ['Next.js 14', 'TypeScript', 'Framer Motion', 'Tailwind CSS'],
-      link: '#'
+      technologies: [
+        "Next.js 14",
+        "TypeScript",
+        "Framer Motion",
+        "Tailwind CSS",
+      ],
+      link: "#",
     },
     {
-      year: '2024',
-      title: 'E-Commerce Dashboard',
-      category: 'Web Application',
-      description: 'Dashboard admin untuk mengelola toko online dengan fitur analytics dan inventory management',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop',
+      year: "2024",
+      title: "E-Commerce Dashboard",
+      category: "Web Application",
+      description:
+        "Dashboard admin untuk mengelola toko online dengan fitur analytics dan inventory management",
+      image:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
       icon: Code,
-      technologies: ['React', 'Node.js', 'MongoDB', 'Chart.js'],
-      link: '#'
+      technologies: ["React", "Node.js", "MongoDB", "Chart.js"],
+      link: "#",
     },
     {
-      year: '2023',
-      title: 'Task Management App',
-      category: 'Mobile App',
-      description: 'Aplikasi mobile untuk manajemen tugas dengan fitur kolaborasi tim dan notifikasi real-time',
-      image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop',
+      year: "2023",
+      title: "Task Management App",
+      category: "Mobile App",
+      description:
+        "Aplikasi mobile untuk manajemen tugas dengan fitur kolaborasi tim dan notifikasi real-time",
+      image:
+        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
       icon: Code,
-      technologies: ['React Native', 'Firebase', 'Redux', 'Push Notifications'],
-      link: '#'
+      technologies: ["React Native", "Firebase", "Redux", "Push Notifications"],
+      link: "#",
     },
     {
-      year: '2023',
-      title: 'Restaurant Website',
-      category: 'Web Design',
-      description: 'Website restoran dengan sistem reservasi online dan menu digital interaktif',
-      image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=300&fit=crop',
+      year: "2023",
+      title: "Restaurant Website",
+      category: "Web Design",
+      description:
+        "Website restoran dengan sistem reservasi online dan menu digital interaktif",
+      image:
+        "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=300&fit=crop",
       icon: Code,
-      technologies: ['WordPress', 'PHP', 'MySQL', 'Booking System'],
-      link: '#'
+      technologies: ["WordPress", "PHP", "MySQL", "Booking System"],
+      link: "#",
     },
     {
-      year: '2022',
-      title: 'First Web Project',
-      category: 'Learning Project',
-      description: 'Website pertama yang dibuat saat belajar web development dengan HTML, CSS, dan JavaScript',
-      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop',
+      year: "2022",
+      title: "First Web Project",
+      category: "Learning Project",
+      description:
+        "Website pertama yang dibuat saat belajar web development dengan HTML, CSS, dan JavaScript",
+      image:
+        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop",
       icon: Code,
-      technologies: ['HTML/CSS', 'JavaScript', 'Responsive Design', 'Git'],
-      link: '#'
-    }
-  ]
+      technologies: ["HTML/CSS", "JavaScript", "Responsive Design", "Git"],
+      link: "#",
+    },
+  ];
 
   // Show only first 3 projects initially
-  const displayedProjects = showMore ? projectData : projectData.slice(0, 3)
+  const displayedProjects = showMore ? projectData : projectData.slice(0, 3);
 
   const getCategoryColor = (category: string) => {
     switch (category) {
-      case 'Web Development': return 'bg-blue-500/20 text-blue-300 border-blue-500/30'
-      case 'Web Application': return 'bg-green-500/20 text-green-300 border-green-500/30'
-      case 'Mobile App': return 'bg-purple-500/20 text-purple-300 border-purple-500/30'
-      case 'Web Design': return 'bg-yellow-500/20 text-yellow-300 border-yellow-500/30'
-      case 'Learning Project': return 'bg-pink-500/20 text-pink-300 border-pink-500/30'
-      default: return 'bg-gray-500/20 text-gray-300 border-gray-500/30'
+      case "Web Development":
+        return "bg-blue-500/20 text-blue-300 border-blue-500/30";
+      case "Web Application":
+        return "bg-green-500/20 text-green-300 border-green-500/30";
+      case "Mobile App":
+        return "bg-purple-500/20 text-purple-300 border-purple-500/30";
+      case "Web Design":
+        return "bg-yellow-500/20 text-yellow-300 border-yellow-500/30";
+      case "Learning Project":
+        return "bg-pink-500/20 text-pink-300 border-pink-500/30";
+      default:
+        return "bg-gray-500/20 text-gray-300 border-gray-500/30";
     }
-  }
+  };
 
   return (
     <section className="py-20 relative">
@@ -104,8 +125,9 @@ const ProjectShowcase = () => {
             MY WORKS
           </h2>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
-            Koleksi project yang telah saya kerjakan, dari website sederhana hingga aplikasi kompleks, 
-            menampilkan evolusi skill dan kreativitas dalam pengembangan digital.
+            Koleksi project yang telah saya kerjakan, dari website sederhana
+            hingga aplikasi kompleks, menampilkan evolusi skill dan kreativitas
+            dalam pengembangan digital.
           </p>
         </motion.div>
 
@@ -113,7 +135,7 @@ const ProjectShowcase = () => {
         <div className="relative max-w-6xl mx-auto">
           {/* Timeline Line - Desktop */}
           <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full timeline-line" />
-          
+
           {/* Timeline Line - Mobile */}
           <div className="md:hidden absolute left-8 w-0.5 h-full timeline-line" />
 
@@ -127,20 +149,27 @@ const ProjectShowcase = () => {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className={`relative flex items-center ${
-                  index % 2 === 0 ? 'md:flex-row flex-col' : 'md:flex-row-reverse flex-col'
+                  index % 2 === 0
+                    ? "md:flex-row flex-col"
+                    : "md:flex-row-reverse flex-col"
                 }`}
               >
                 {/* Content */}
-                <div className={`md:w-5/12 w-full timeline-content ${
-                  index % 2 === 0 
-                    ? 'md:pr-8 md:text-right text-left pl-16 md:pl-0' 
-                    : 'md:pl-8 md:text-left text-left pl-16 md:pl-0'
-                }`}>
+                <div
+                  className={`md:w-5/12 w-full timeline-content ${
+                    index % 2 === 0
+                      ? "md:pr-8 md:text-right text-left pl-16 md:pl-0"
+                      : "md:pl-8 md:text-left text-left pl-16 md:pl-0"
+                  }`}
+                >
                   {/* Year Badge */}
-                  
 
                   {/* Category */}
-                  <div className={`inline-block px-3 py-1 rounded-full text-xs font-medium border mb-3 ${getCategoryColor(project.category)}`}>
+                  <div
+                    className={`inline-block px-3 py-1 rounded-full text-xs font-medium border mb-3 ${getCategoryColor(
+                      project.category
+                    )}`}
+                  >
                     {project.category}
                   </div>
 
@@ -193,14 +222,21 @@ const ProjectShowcase = () => {
                     viewport={{ once: true }}
                     className="w-12 h-12 md:w-16 md:h-16 bg-dark-100 border-4 border-cream-100 rounded-full flex items-center justify-center timeline-dot timeline-dot-animated"
                   >
-                    <project.icon size={20} className="md:w-6 md:h-6 text-cream-100" />
+                    <project.icon
+                      size={20}
+                      className="md:w-6 md:h-6 text-cream-100"
+                    />
                   </motion.div>
                 </div>
 
                 {/* Image */}
-                <div className={`md:w-5/12 w-full mt-4 md:mt-0 ${
-                  index % 2 === 0 ? 'md:pl-8 pl-16 md:pl-8' : 'md:pr-8 pl-16 md:pr-8'
-                }`}>
+                <div
+                  className={`md:w-5/12 w-full mt-4 md:mt-0 ${
+                    index % 2 === 0
+                      ? "md:pl-8 pl-16 md:pl-8"
+                      : "md:pr-8 pl-16 md:pr-8"
+                  }`}
+                >
                   {project.image && (
                     <motion.div
                       initial={{ opacity: 0, scale: 0.8 }}
@@ -217,10 +253,14 @@ const ProjectShowcase = () => {
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
-                      
+
                       {/* Image overlay with category */}
                       <div className="absolute top-4 left-4">
-                        <span className={`px-2 py-1 rounded text-xs font-medium ${getCategoryColor(project.category)} backdrop-blur-sm`}>
+                        <span
+                          className={`px-2 py-1 rounded text-xs font-medium ${getCategoryColor(
+                            project.category
+                          )} backdrop-blur-sm`}
+                        >
                           {project.category}
                         </span>
                       </div>
@@ -247,14 +287,16 @@ const ProjectShowcase = () => {
                 className="inline-flex items-center px-8 py-4 bg-dark-200 border border-cream-100/20 rounded-full text-cream-100 font-medium hover:bg-dark-100 hover:border-cream-100/40 transition-all duration-300 hover-glow"
               >
                 <span className="mr-3">Lihat Lagi</span>
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-200" />
+                <ArrowRight
+                  size={20}
+                  className="group-hover:translate-x-1 transition-transform duration-200"
+                />
               </motion.button>
             </motion.div>
           )}
         </div>
 
         {/* Bottom CTA */}
-       
       </div>
 
       {/* Background Elements */}
@@ -263,7 +305,7 @@ const ProjectShowcase = () => {
         <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-cream-100 rounded-full opacity-3 blur-3xl" />
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ProjectShowcase
+export default ProjectShowcase;

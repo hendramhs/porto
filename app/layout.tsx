@@ -1,21 +1,26 @@
-import './globals.css'
-import type { Metadata } from 'next'
+import "./globals.css";
+import type { Metadata, Viewport } from "next";
 
 export const metadata: Metadata = {
-  title: 'Hendra Darmawan - Portfolio',
-  description: 'Portfolio website Hendra Darmawan - Mahasiswa dan Web Developer',
-  keywords: 'Hendra Darmawan, portfolio, web developer, mahasiswa, projects',
-  authors: [{ name: 'Hendra Darmawan' }],
-  viewport: 'width=device-width, initial-scale=1',
+  title: "Hendra Darmawan - Portfolio",
+  description:
+    "Portfolio website Hendra Darmawan - Mahasiswa dan Web Developer",
+  keywords: "Hendra Darmawan, portfolio, web developer, mahasiswa, projects",
+  authors: [{ name: "Hendra Darmawan" }],
   icons: {
-    icon: '/favicon.svg',
+    icon: "/favicon.svg",
   },
-}
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="id">
@@ -25,5 +30,5 @@ export default function RootLayout({
       </head>
       <body>{children}</body>
     </html>
-  )
+  );
 }
