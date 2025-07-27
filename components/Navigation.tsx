@@ -12,12 +12,12 @@ interface NavigationProps {
 const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const menuItems = [
-    { id: "hero", label: "ホーム", labelId: "Beranda" },
-    { id: "about", label: "私について", labelId: "Tentang" },
-    { id: "projects", label: "プロジェクト", labelId: "Projects" },
-    { id: "works", label: "制作実績", labelId: "Karya" },
-    { id: "contact", label: "お問い合わせ", labelId: "Kontak" },
+  const navItems = [
+    { id: "hero", label: "Beranda", labelId: "Beranda" },
+    { id: "about", label: "Tentang", labelId: "Tentang" },
+    { id: "projects", label: "Projects", labelId: "Projects" },
+    { id: "works", label: "Karya", labelId: "Karya" },
+    { id: "contact", label: "Kontak", labelId: "Kontak" },
   ];
 
   const socialLinks = [
@@ -49,7 +49,7 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
-            {menuItems.map((item, index) => (
+            {navItems.map((item, index) => (
               <motion.button
                 key={item.id}
                 initial={{ opacity: 0, y: -20 }}
@@ -60,8 +60,7 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
                   activeSection === item.id ? "text-cream-100" : "text-gray-400"
                 }`}
               >
-                <div className="text-xs mb-1">{item.label}</div>
-                <div className="text-sm">{item.labelId}</div>
+                {item.label}
               </motion.button>
             ))}
           </div>
@@ -97,7 +96,7 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
             >
               <div className="p-6 pt-20">
                 <div className="space-y-6">
-                  {menuItems.map((item) => (
+                  {navItems.map((item) => (
                     <button
                       key={item.id}
                       onClick={() => {
@@ -110,8 +109,7 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
                           : "text-gray-400"
                       }`}
                     >
-                      <div className="text-sm mb-1">{item.label}</div>
-                      <div className="text-lg">{item.labelId}</div>
+                      {item.label}
                     </button>
                   ))}
                 </div>

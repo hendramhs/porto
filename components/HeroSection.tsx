@@ -37,11 +37,6 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-right lg:text-left"
           >
-            <div className="text-sm text-gray-400 mb-4 font-light tracking-wide">
-              作品集
-              <br />
-              PORTFOLIO
-            </div>
           </motion.div>
         </div>
 

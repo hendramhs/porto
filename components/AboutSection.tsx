@@ -68,12 +68,12 @@ const AboutSection = () => {
           >
             <div>
               <div className="text-sm text-gray-400 mb-4 tracking-wider">
-                私について / TENTANG SAYA
+                TENTANG SAYA
               </div>
               <h2 className="text-4xl lg:text-5xl font-serif font-bold text-gradient mb-6">
-                これまでのこと
+                Perjalanan Saya
                 <br />
-                嗜好と思考の話
+                Cerita tentang minat dan pemikiran
               </h2>
             </div>
 

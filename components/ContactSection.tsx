@@ -38,7 +38,7 @@ const ContactSection = () => {
             className="text-center mb-16"
           >
             <div className="text-sm text-gray-400 mb-4 tracking-wider">
-              お問い合わせ / KONTAK
+              KONTAK
             </div>
             <h2 className="text-4xl lg:text-6xl font-serif font-bold text-gradient mb-8">
               LET'S CONNECT

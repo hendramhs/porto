@@ -92,9 +92,9 @@ const WorksSection = () => {
   ];
 
   const categories = [
-    { id: "all", label: "すべて", labelId: "Semua" },
-    { id: "web", label: "ウェブ", labelId: "Web" },
-    { id: "design", label: "デザイン", labelId: "Design" },
+    { id: "all", label: "Semua", labelId: "Semua" },
+    { id: "web", label: "Web", labelId: "Web" },
+    { id: "design", label: "Design", labelId: "Design" },
   ];
 
   const filteredProjects =
@@ -114,7 +114,7 @@ const WorksSection = () => {
           className="text-center mb-16"
         >
           <div className="text-sm text-gray-400 mb-4 tracking-wider">
-            制作実績 / KARYA SAYA
+            KARYA SAYA
           </div>
           <h2 className="text-4xl lg:text-6xl font-serif font-bold text-gradient mb-8">
             SELECTED WORKS

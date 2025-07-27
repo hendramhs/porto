@@ -162,10 +162,10 @@ const ProjectShowcase = () => {
           className="text-center mb-16"
         >
           <div className="text-sm text-gray-400 mb-4 tracking-wider">
-            プロジェクト / PROJECTS
+            PROJECTS
           </div>
           <h2 className="text-4xl lg:text-6xl font-serif font-bold text-gradient mb-8">
-            MY WORKS
+            PROJECTS
           </h2>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
             Koleksi project yang telah saya kerjakan, dari website sederhana
